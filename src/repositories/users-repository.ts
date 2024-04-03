@@ -1,3 +1,6 @@
 export abstract class UsersRepository {
-     abstract create(name: string, role: string): Promise<void>
+
+     create(name: string, role: string[], email:string, password:string): Promise<void>{
+          throw new Error('Method not implemented')
+     }
 }

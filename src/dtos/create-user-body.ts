@@ -1,4 +1,4 @@
-import { IsNotEmpty, Length } from "class-validator"
+import { IsEmail, IsNotEmpty, Length } from "class-validator"
 
 
 export class CreateUserBody {
@@ -7,5 +7,13 @@ export class CreateUserBody {
      name: string
 
      @IsNotEmpty({ message: "the role should not be empty" })
-     role: string
+     role: string[]
+
+     @IsNotEmpty({ message: "the email should not be empty" })
+     @IsEmail()
+     email: string
+
+     @IsNotEmpty({ message: "the password should not be empty" })
+     password: string
+
 }
